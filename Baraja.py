@@ -25,7 +25,8 @@ def CrearBaraja():
 def BarajearCartas(n):
     StackCartas = []
     for i in range (n):
-        StackCartas.append(CrearBaraja[:])
+        StackCartas.extend(CrearBaraja())
+    rd.seed(37) #Mi numero favorito xd
     rd.shuffle(StackCartas)
     return StackCartas #Este seria el Stack de Cartas
     
