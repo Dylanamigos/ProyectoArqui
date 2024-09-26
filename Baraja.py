@@ -8,16 +8,27 @@ class Carta:
 
 def CrearBaraja():
     Baraja = []
-    for i in range(10):
-        Baraja.append(Carta(i+1, "Corazones"))
-        Baraja.append(Carta(i+1, "Diamantes"))
-        Baraja.append(Carta(i+1, "Treboles"))
-        Baraja.append(Carta(i+1, "Picas"))
-    for i in range(3):
-        Baraja.append(Carta(10, "Corazones"))
-        Baraja.append(Carta(10, "Diamantes"))
-        Baraja.append(Carta(10, "Picas"))
-        Baraja.append(Carta(10, "Treboles"))
+    for i in range(9):
+        Baraja.append(Carta(str(i+2), "Corazones"))
+        Baraja.append(Carta(str(i+2), "Diamantes"))
+        Baraja.append(Carta(str(i+2), "Treboles"))
+        Baraja.append(Carta(str(i+2), "Picas"))
+    Baraja.append(Carta("J", "Corazones"))
+    Baraja.append(Carta("J", "Diamantes"))
+    Baraja.append(Carta("J", "Picas"))
+    Baraja.append(Carta("J", "Treboles"))
+    Baraja.append(Carta("K", "Corazones"))
+    Baraja.append(Carta("K", "Diamantes"))
+    Baraja.append(Carta("K", "Picas"))
+    Baraja.append(Carta("K", "Treboles"))
+    Baraja.append(Carta("Q", "Corazones"))
+    Baraja.append(Carta("Q", "Diamantes"))
+    Baraja.append(Carta("Q", "Picas"))
+    Baraja.append(Carta("Q", "Treboles"))
+    Baraja.append(Carta("A", "Corazones"))
+    Baraja.append(Carta("A", "Diamantes"))
+    Baraja.append(Carta("A", "Picas"))
+    Baraja.append(Carta("A", "Treboles"))
     return Baraja
 #Crea una Baraja con 52 cartas
 
@@ -26,7 +37,7 @@ def BarajearCartas(n):
     StackCartas = []
     for i in range (n):
         StackCartas.extend(CrearBaraja())
-    rd.seed(37) #Mi numero favorito xd
+    rd.seed(rd.randint(0, 37)) #Mi numero favorito xd
     rd.shuffle(StackCartas)
     return StackCartas #Este seria el Stack de Cartas
     
